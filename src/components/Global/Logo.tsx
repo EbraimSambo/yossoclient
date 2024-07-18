@@ -12,7 +12,7 @@ const AppLogo = ({color}: {color: string}) => {
           component={"a"} 
           variant='h2'
            href='/' 
-           fontSize={20} 
+           fontSize={28} 
            >Yosso</Typography>
     </Box>
   )

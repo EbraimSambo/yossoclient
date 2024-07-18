@@ -4,31 +4,42 @@ import { AppBar, List, ListItem, ListItemButton, ListItemText, SxProps, Typograp
 import Link from 'next/link'
 import { Theme } from '@emotion/react'
 import AppLogo from '@/components/Global/Logo'
+import { useScrollHeader } from '@/hooks/main'
 
 const logo: SxProps<Theme>={
    display: { xs: "none", sm: "block" },
 }
 const navItems = [
  {
-  title: 'Início'
+  title: 'Início',
+  path: "/"
  },
  {
-  title: 'Cursos'
+  title: 'Cursos',
+  path: "/courses"
  }, {
-  title: 'Contactos'
+  title: 'Contactos',
+  path: "/contacts"
  },  {
-  title: 'Candidtura'
+  title: 'Candidtura',
+  path: "/subscribe"
  },
 ];
-const NavBar = () => {
+type ProgressbarProps = {
+  target: React.RefObject<HTMLElement>;
+};
+
+
+const NavBar = ({target}:ProgressbarProps) => {
+  const {scroll,pathName} = useScrollHeader(target)
   return (
-    <AppBar position='fixed'>
+    <AppBar sx={ scroll ?{boxShadow: 4}:{boxShadow: 0}} position='fixed'>
       <NavbarBox>
       <AppLogo color={"#001265"} />
-      <List sx={{display: "flex" ,}}>
+      <List sx={{display: "flex" ,  }} >
         {navItems.map((item, index) => (
           <ListItem key={index} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
+            <ListItemButton LinkComponent={"a"} href={item.path} sx={{ textAlign: 'center', fontWeight: "700" }}>
               <ListItemText primary={item.title} />
             </ListItemButton>
           </ListItem>

@@ -1,19 +1,23 @@
 "use client"
 import { MainProps } from '@/config/interfaces/interfaces'
-import React from 'react'
+import React, { useRef } from 'react'
 import NavBar from './bases/NavBar'
 import Footer from './bases/Footer'
 import { LayoutBox, MainContent } from './bases/styled'
 
 const MainLayout: React.FC<MainProps> = ({ children }) => {
+    const refNavbar = useRef(null)
     return (
-        <LayoutBox>
-            <NavBar />
-            <MainContent component={"main"} >
-                {children}
-            </MainContent>
-            <Footer />
-        </LayoutBox>
+        <div ref={refNavbar}>
+            <LayoutBox>
+                <NavBar target={refNavbar} />
+                <MainContent component={"main"} >
+                    {children}
+                </MainContent>
+                <Footer />
+            </LayoutBox>
+        </div>
+
     )
 }
 

@@ -7,6 +7,11 @@ import PublicIcon from '@mui/icons-material/Public';
 import DonutSmallIcon from '@mui/icons-material/DonutSmall';
 import StackedLineChartIcon from '@mui/icons-material/StackedLineChart';
 import SubjectIcon from '@mui/icons-material/Subject';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import XIcon from '@mui/icons-material/X';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 type Course = {
    title: string,
    cover: string,
@@ -84,6 +89,7 @@ export const flats = [
    {
       flat: "INICIANTE",
       price: "40.000",
+      icon: "/images/icons/beginner.png",
       benefices: [
          {
             benefice: "Consultoria de marketing Personalizada"
@@ -106,6 +112,7 @@ export const flats = [
    }, {
       flat: "BRONZE",
       price: "75.000,00",
+      icon: "/images/icons/bronze.png",
       benefices: [
          {
             benefice: "Consultoria de marketing Personalizada"
@@ -129,6 +136,7 @@ export const flats = [
    {
       flat: "PRATA",
       price: "100.000,00",
+      icon: "/images/icons/prata.png",
       benefices: [
          {
             benefice: "Consultoria de marketing Personalizada"
@@ -154,6 +162,7 @@ export const flats = [
    {
       flat: "OURO",
       price: "150.000,00",
+      icon: "/images/icons/gold.png",
       benefices: [
          {
             benefice: "Consultoria de marketing Personalizada"
@@ -185,39 +194,67 @@ export const flats = [
 export const services = [
    {
       service: "Gestão de Markting",
-      icon: <DonutSmallIcon fontSize='large' />,
-      dec: ""
+      icon: <DonutSmallIcon color='primary' fontSize='large' />,
+      desc: "Consultoria de Marketing para ajudar as empresas a crescerem e expandirem suas atividades."
    }, {
       service: "Brading",
-      icon: <PublicIcon fontSize='large' />,
-      dec: ""
+      icon: <PublicIcon color='primary' fontSize='large' />,
+      desc: "Criamos identidades memoráveis para empresas inovadoras,transformando marcas em histórias cativantes."
    }, {
       service: "Contabilidade",
-      icon: <CalculateIcon fontSize='large' />,
-      dec: ""
+      icon: <CalculateIcon color='primary' fontSize='large' />,
+      desc: "Assessoria empresarial com base no conhecimento do ambiente de negócios, situação fiscal e posição financeira."
    }, {
-      service: "Planeamnento Estrategico",
-      icon: <StackedLineChartIcon fontSize='large' />,
-      dec: ""
+      service: "Planejamnento Estrategico",
+      icon: <StackedLineChartIcon color='primary' fontSize='large' />,
+      desc: "O nosso Planeamento Estratégico é a bússola que guia a sua empresa em direção ao sucesso. Analisamos as tendências do mercado E identificamos oportunidades."
    }, {
       service: "Elaboração de Projectos",
-      icon: <DrawIcon fontSize='large' />,
-      dec: ""
+      icon: <DrawIcon color='primary' fontSize='large' />,
+      desc: "Somos especialistas em transformar ideias em realidade. Nossa equipe altamente qualificada oferece serviços de elaboração de projetos personalizados"
    }, {
       service: "Gestão de Midia Social",
-      icon: <AccountTreeIcon fontSize='large' />,
-      dec: ""
+      icon: <AccountTreeIcon color='primary' fontSize='large' />,
+      desc: "Nós criamos pautas de conteúdo, elaboramos estratégias, produzimos artes e fazemos as postagens."
    }, {
       service: "Estudo de Viabilidade",
-      icon: <AutoStoriesIcon fontSize='large' />,
-      dec: ""
+      icon: <AutoStoriesIcon color='primary' fontSize='large' />,
+      desc: "Analisa a ideia do projeto sob uma perspectiva operacional, considerando aspectos práticos e logísticos."
    }, {
       service: "Treinamento Corporativo",
-      icon: <SchoolIcon fontSize='large' />,
-      dec: ""
+      icon: <SchoolIcon color='primary' fontSize='large' />,
+      desc: "Temos variados cursos para alavancar a sua carreira profissional."
    }, {
       service: "Fecho de contas",
-      icon: <SubjectIcon fontSize='large' />,
-      dec: ""
+      icon: <SubjectIcon color='primary' fontSize='large' />,
+      desc: "Verificação se todas as aquisições e alienações de ativos estão corretamente registradas, incluindo depreciações e amortizações."
    }
+]
+
+
+
+export const media = [
+   {
+      title: "Facebook",
+      icon: <FacebookIcon fontSize='small' />,
+      url: "https://facebook.com"
+   },
+   {
+      title: "Facebook",
+      icon: <WhatsAppIcon fontSize='small' />,
+      url: "https://facebook.com"
+   },
+   {
+      title: "Facebook",
+      icon: <XIcon fontSize='small' />,
+      url: "https://facebook.com"
+   }, {
+      title: "Facebook",
+      icon: <YouTubeIcon fontSize='small' />,
+      url: "https://facebook.com"
+   }, {
+      title: "Facebook",
+      icon: <WhatsAppIcon fontSize='small' />,
+      url: "https://facebook.com"
+   },
 ]

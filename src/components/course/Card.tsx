@@ -6,6 +6,7 @@ import { Body, CoverCourse, Duration, Item, Price } from './styled'
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import SellIcon from '@mui/icons-material/Sell';
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
+import { ContainerCenterGap } from '../Global/styledGlobal'
 const CardCourse = ({ course }: { course: Course }) => {
     return (
         <Item boxShadow={2} component={"li"}>
@@ -17,9 +18,12 @@ const CardCourse = ({ course }: { course: Course }) => {
                     {course.title}
                 </Typography>
                 <Duration>
-                    <Typography color={"#212121"} component={"h3"} fontSize={14} fontWeight={"900"} variant='h5'>
-                        Duração de {course.duration} dias
-                    </Typography>
+                    <ContainerCenterGap>
+                        <AccessTimeIcon fontSize='small' />
+                        <Typography color={"#212121"} component={"h3"} fontSize={14} fontWeight={"900"} variant='h5'>
+                            Duração de {course.duration} dias
+                        </Typography>
+                    </ContainerCenterGap>
                 </Duration>
                 <Price >
                     <Typography color={"#212121"} component={"h4"} fontSize={12} fontWeight={"900"} variant='h5'>

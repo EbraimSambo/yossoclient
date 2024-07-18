@@ -2,12 +2,15 @@
 import { MainProps } from '@/config/interfaces/interfaces'
 import React from 'react'
 import ThemeProviderApp from './ThemeProvider'
-
-const GlobalProvider: React.FC<MainProps> = ({children}) => {
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
+const GlobalProvider: React.FC<MainProps> = ({ children }) => {
   return (
-    <ThemeProviderApp>
+    <AppRouterCacheProvider>
+      <ThemeProviderApp>
         {children}
-    </ThemeProviderApp>
+      </ThemeProviderApp>
+    </AppRouterCacheProvider>
+
   )
 }
 
