@@ -20,62 +20,50 @@ type Course = {
 }
 export const courses: Course[] = [
    {
-      title: "Formação de Contabilidade Senior",
-      cover: "/images/courses/course-3.jpeg",
+      title: "Formação de Contabilidade Sénior",
+      cover: "/images/courses/course-2.png",
       price: "85.000",
       duration: "35",
       type: "presential"
    }, {
-      title: "Formação de Intesiva de Fecho de Contas",
-      cover: "/images/courses/course-2.jpeg",
+      title: "Formação Intesiva de Fecho de Contas",
+      cover: "/images/courses/course.png",
       price: "45.000",
       duration: "35",
       type: "presential"
    }, {
       title: "Operador de Caixa Primaveira",
-      cover: "/images/courses/course-1.jpg",
+      cover: "/images/courses/course-4.png",
       price: "35.000",
       duration: "2",
       type: "presential"
    }, {
-      title: "FormaçãoAuditoria e Financeira e Contabilidade",
-      cover: "/images/courses/course-1.jpg",
+      title: "Formação Auditoria Financeira e Contabilidade",
+      cover: "/images/courses/course-3.png",
       price: "85.000",
       duration: "35",
       type: "presential"
    }, {
       title: "Formação de Contabilidade no Primaveira V10",
-      cover: "/images/courses/course-1.jpg",
+      cover: "/images/courses/course-5.png",
       price: "85.000",
-      duration: "35",
-      type: "presential"
-   }, {
-      title: "Formação de Contabilidade Senior",
-      cover: "/images/courses/course-1.jpg",
-      price: "45.000",
       duration: "35",
       type: "presential"
    }, {
       title: "Formação de Contabilidade Geral",
-      cover: "/images/courses/course-1.jpg",
+      cover: "/images/courses/course-5.png",
       price: "50.000",
       duration: "35",
       type: "presential"
    }, {
-      title: "Formação de Contabilidade Senior",
-      cover: "/images/courses/course-1.jpg",
-      price: "85.000",
-      duration: "35",
-      type: "presential"
-   }, {
-      title: "Curso de Gestão de RH no Primaveira e Exexl",
-      cover: "/images/courses/course-1.jpg",
+      title: "Curso de Gestão de RH no Primaveira e Excel",
+      cover: "/images/courses/course-5.png",
       price: "85.000",
       duration: "35",
       type: "presential"
    }, {
       title: "Formação de Estudo de viabilidade e elaboração de Planos de Negocios",
-      cover: "/images/courses/course-1.jpg",
+      cover: "/images/courses/course-5.png",
       price: "45.000",
       duration: "35",
       type: "presential"

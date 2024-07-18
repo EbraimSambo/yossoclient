@@ -1,6 +1,7 @@
 import Banner from "@/components/home/Banner";
 import Flats from "@/components/home/Flats";
 import InfoCourse from "@/components/home/InfoCourse";
+import PaymentMethod from "@/components/home/PaymentMethod";
 import Services from "@/components/home/Services";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <Services />
       <Flats />
       <InfoCourse  />
+      {/* <PaymentMethod /> */}
     </>
   );
 }

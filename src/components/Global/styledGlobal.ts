@@ -31,3 +31,9 @@ export const sxFlexGap = {
   fontWeight: 600,
   marginTop: 2
 }
+
+export const ContainerBetween = styled(Box)(({ theme }) => ({
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+}))

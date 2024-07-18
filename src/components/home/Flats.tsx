@@ -24,9 +24,9 @@ const Flats = () => {
             <Grid component={"ul"} container width={"100%"} spacing={{ xs: 2, md: 3 }} columns={{ xs: 1, sm: 8, md: 16 }}>
                 {flats.slice(0, 6).map((flat, index) => (
                     <Grid item xs={2} sm={4} md={4} key={index}>
-                        <Item key={index} sx={{ boxShadow: 2 }}>
-                            <ContainerCenterGap key={index}>
-                                <Icon key={index}>
+                        <Item sx={{ boxShadow: 2 }}>
+                            <ContainerCenterGap>
+                                <Icon>
                                     <Image src={flat.icon} fill alt={flat.flat} priority />
                                 </Icon>
                                 <Typography color={"primary"} variant='h4' component={"h3"} > {flat.flat} </Typography>
