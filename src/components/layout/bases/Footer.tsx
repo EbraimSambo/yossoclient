@@ -17,7 +17,7 @@ const Footer = () => {
             </ContainerBetween>
             <ContainerBetween>
                 <Box>
-                    <AppLogo color={"#fff"} />
+                    <AppLogo color={"blank"} />
                     <Typography component={"address"} fontSize={13}>Urbanização Nova Vida, rua 15, casa 30.</Typography>
                 </Box>
                 <Social />

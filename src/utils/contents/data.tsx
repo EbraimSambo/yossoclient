@@ -9,9 +9,8 @@ import StackedLineChartIcon from '@mui/icons-material/StackedLineChart';
 import SubjectIcon from '@mui/icons-material/Subject';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import XIcon from '@mui/icons-material/X';
+import AttachEmailIcon from '@mui/icons-material/AttachEmail';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import YouTubeIcon from '@mui/icons-material/YouTube';
 type Course = {
    title: string,
    cover: string,
@@ -195,11 +194,11 @@ export const services = [
    {
       service: "Gestão de Markting",
       icon: <DonutSmallIcon color='primary' fontSize='large' />,
-      desc: "Consultoria de Marketing para ajudar as empresas a crescerem e expandirem suas atividades."
+      desc: "Consultoria de Marketing para ajudar as empresas a crescerem e expandirem as suas atividades."
    }, {
       service: "Brading",
       icon: <PublicIcon color='primary' fontSize='large' />,
-      desc: "Criamos identidades memoráveis para empresas inovadoras,transformando marcas em histórias cativantes."
+      desc: "Criamos identidades memoráveis para empresas inovadoras, transformando marcas em histórias cativantes."
    }, {
       service: "Contabilidade",
       icon: <CalculateIcon color='primary' fontSize='large' />,
@@ -237,24 +236,24 @@ export const media = [
    {
       title: "Facebook",
       icon: <FacebookIcon fontSize='small' />,
-      url: "https://facebook.com"
+      url: "https://web.facebook.com/profile.php?id=100087844806403",
+      label: "Yosso - Marketing e Contabilidade "
    },
    {
-      title: "Facebook",
+      title: "WhatsApp",
       icon: <WhatsAppIcon fontSize='small' />,
-      url: "https://facebook.com"
+      url: "https://facebook.com",
+      label: "926423787"
    },
    {
-      title: "Facebook",
-      icon: <XIcon fontSize='small' />,
-      url: "https://facebook.com"
-   }, {
-      title: "Facebook",
-      icon: <YouTubeIcon fontSize='small' />,
-      url: "https://facebook.com"
-   }, {
-      title: "Facebook",
-      icon: <WhatsAppIcon fontSize='small' />,
-      url: "https://facebook.com"
-   },
+      title: "Instagram",
+      icon: <InstagramIcon fontSize='small' />,
+      url: "https://www.instagram.com/yosso_financas/",
+      label: "yosso_financas"
+   },{
+      title: "Email",
+      icon: <AttachEmailIcon fontSize='small' />,
+      url: "mailto:yossofinancas@gmail.com",
+      label: "mailto:yossofinancas@gmail.com"
+   } 
 ]

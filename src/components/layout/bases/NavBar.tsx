@@ -5,46 +5,49 @@ import Link from 'next/link'
 import { Theme } from '@emotion/react'
 import AppLogo from '@/components/Global/Logo'
 import { useScrollHeader } from '@/hooks/main'
+import LinkApp from '@/components/Global/Link'
 
-const logo: SxProps<Theme>={
-   display: { xs: "none", sm: "block" },
+const logo: SxProps<Theme> = {
+  display: { xs: "none", sm: "block" },
 }
 const navItems = [
- {
-  title: 'Início',
-  path: "/"
- },
- {
-  title: 'Cursos',
-  path: "/courses"
- }, {
-  title: 'Contactos',
-  path: "/contacts"
- },  {
-  title: 'Candidtura',
-  path: "/subscribe"
- },
+  {
+    title: 'Início',
+    path: "/"
+  },
+  {
+    title: 'Cursos',
+    path: "/courses"
+  }, {
+    title: 'Contactos',
+    path: "/contacts"
+  }, {
+    title: 'Candidtura',
+    path: "/subscribe"
+  },
 ];
 type ProgressbarProps = {
   target: React.RefObject<HTMLElement>;
 };
 
 
-const NavBar = ({target}:ProgressbarProps) => {
-  const {scroll,pathName} = useScrollHeader(target)
+const NavBar = ({ target }: ProgressbarProps) => {
+  const { scroll, pathName } = useScrollHeader(target)
   return (
-    <AppBar sx={ scroll ?{boxShadow: 4}:{boxShadow: 0}} position='fixed'>
+    <AppBar sx={scroll ? { boxShadow: 4 } : { boxShadow: 0 }} position='fixed'>
       <NavbarBox>
-      <AppLogo color={"#001265"} />
-      <List sx={{display: "flex" ,  }} >
-        {navItems.map((item, index) => (
-          <ListItem key={index} disablePadding>
-            <ListItemButton LinkComponent={"a"} href={item.path} sx={{ textAlign: 'center', fontWeight: "700" }}>
-              <ListItemText primary={item.title} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
+        <AppLogo color={"blue"} />
+        <List sx={{ display: "flex", }} >
+          {navItems.map((item, index) => (
+            <LinkApp key={index} href={item.path} >
+              <ListItem key={index} disablePadding>
+                <ListItemButton key={index}  sx={{textAlign: 'center', fontWeight: "900", color: "#001265" }}>
+                  <ListItemText primary={item.title} />
+                </ListItemButton>
+              </ListItem>
+            </LinkApp>
+          ))}
+        </List>
       </NavbarBox>
     </AppBar>
   )
