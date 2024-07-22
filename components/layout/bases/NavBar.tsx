@@ -1,11 +1,12 @@
 import React from 'react'
-import { NavbarBox } from './styled'
-import { AppBar, List, ListItem, ListItemButton, ListItemText, SxProps, Typography } from '@mui/material'
+import { ContainerCenter, NavbarBox } from './styled'
+import { AppBar, Button, List, ListItem, ListItemButton, ListItemText, SxProps, Typography } from '@mui/material'
 import Link from 'next/link'
 import { Theme } from '@emotion/react'
 import AppLogo from '../../Global/Logo'
 import { useScrollHeader } from '../../../hooks/main'
 import LinkApp from '../../Global/Link'
+import { buttonConfig } from '@/components/_ui/Global'
 
 const logo: SxProps<Theme> = {
   display: { xs: "none", sm: "block" },
@@ -47,6 +48,9 @@ const NavBar = ({ target }: ProgressbarProps) => {
               </ListItem>
             </LinkApp>
           ))}
+        <ContainerCenter>
+          <Button sx={buttonConfig} href='/login' variant='contained' >Conectar-me</Button>
+        </ContainerCenter>
         </List>
       </NavbarBox>
     </AppBar>

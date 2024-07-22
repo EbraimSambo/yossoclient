@@ -5,6 +5,7 @@ import React from 'react'
 import { FormAuth, InputContent, InputControl, InputStyleConfig } from './styleForm'
 import { LabelForm } from '@/components/_ui/Form'
 import { ContainerBetween } from '@/components/Global/styledGlobal'
+import { buttonConfig } from '@/components/_ui/Global'
 
 const FormLogin = () => {
   return (
@@ -26,7 +27,7 @@ const FormLogin = () => {
           <Button sx={{fontSize: 11, textTransform: "initial"}} href='/register'>
           Não tenho uma conta
           </Button>
-          <Button variant='contained'>Criar Conta </Button>
+          <Button sx={buttonConfig}  variant='contained'>Entrar </Button>
         </ContainerBetween>
       </FormAuth>
     </ContainerCenter>
