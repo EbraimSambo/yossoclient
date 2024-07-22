@@ -14,7 +14,7 @@ const text = {
 const TitleSection = ({ title }: { title: string }) => {
   return (
     <Container>
-      <Typography color={"primary"} sx={text} component={"h2"} variant='h4' >{title}</Typography>
+      <Typography color={"primary"} sx={text} component={"h2"} variant='h4' fontSize={22} >{title}</Typography>
     </Container>
   )
 }

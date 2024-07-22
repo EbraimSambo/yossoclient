@@ -36,6 +36,6 @@ export function useScrollHeader(target: React.RefObject<HTMLElement>){
 
 export function useAuthPath(){
   const pathName = usePathname()
-  const veryPath = pathName == "/login"|| pathName == "/register"
+  const veryPath = pathName == "/login"|| pathName == "/register" || pathName.includes("thanks")
   return {pathName,veryPath }
 }

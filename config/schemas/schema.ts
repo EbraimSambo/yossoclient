@@ -11,8 +11,13 @@ export const schemaRegister = z.object({
     email: z.string().min(2,"Campo Obrigatório").email("Insira um email valido!"),
     password: z.string().min(1,"Campo Obrigatorio"),
     repeatPassword: z.string().min(1,"Campo Obrigatorio"),
-    // phone: z.string().nullable()
+    phone: z.string().min(9,"Tem de conter no mínimo 9 algarismo").max(9, "Tem de conter 9 algarismo"),
+})
+export const schemaLogin = z.object({
+    email: z.string().min(2,"Campo Obrigatório").email("Insira um email valido!"),
+    password: z.string().min(1,"Campo Obrigatorio"),
 })
 
 export type inferMail = z.infer<typeof schemaMail>
 export type inferRegister = z.infer<typeof schemaRegister>
+export type inferLogin = z.infer<typeof schemaLogin>
