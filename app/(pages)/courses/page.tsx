@@ -1,4 +1,4 @@
-import Courses from '../../components/home/Courses'
+import Courses from '../../../components/home/Courses'
 import { Metadata } from 'next'
 import React from 'react'
 

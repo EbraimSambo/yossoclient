@@ -34,7 +34,7 @@ type ProgressbarProps = {
 const NavBar = ({ target }: ProgressbarProps) => {
   const { scroll, pathName } = useScrollHeader(target)
   return (
-    <AppBar sx={scroll ? { boxShadow: 4 } : { boxShadow: 0 }} position='fixed'>
+    <AppBar sx={pathName == "/" ? scroll ? { boxShadow: 4 } : { boxShadow: 0 }:{boxShadow: 4}} position='fixed'>
       <NavbarBox>
         <AppLogo color={"blue"} />
         <List sx={{ display: "flex", }} >

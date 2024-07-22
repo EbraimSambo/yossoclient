@@ -33,3 +33,9 @@ export function useScrollHeader(target: React.RefObject<HTMLElement>){
 
     return {scroll,pathName}
 }
+
+export function useAuthPath(){
+  const pathName = usePathname()
+  const veryPath = pathName == "/login"|| pathName == "/register"
+  return {pathName,veryPath }
+}
