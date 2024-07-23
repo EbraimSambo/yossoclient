@@ -1,7 +1,6 @@
 import React from 'react'
 import { ContainerCenter, NavbarBox } from './styled'
 import { AppBar, Button, List, ListItem, ListItemButton, ListItemText, SxProps, Typography } from '@mui/material'
-import Link from 'next/link'
 import { Theme } from '@emotion/react'
 import AppLogo from '../../Global/Logo'
 import { useScrollHeader } from '../../../hooks/main'
@@ -35,23 +34,26 @@ type ProgressbarProps = {
 };
 
 
-const NavBar = ({ target,session }: ProgressbarProps) => {
+const NavBar = ({ target, session }: ProgressbarProps) => {
   const { scroll, pathName } = useScrollHeader(target)
   return (
-    <AppBar sx={pathName == "/" ? scroll ? { boxShadow: 4 } : { boxShadow: 0 }:{boxShadow: 4}} position='fixed'>
+    <AppBar sx={pathName == "/" ? scroll ? { boxShadow: 4 } : { boxShadow: 0 } : { boxShadow: 4 }} position='fixed'>
       <NavbarBox>
         <AppLogo color={"blue"} />
         <List sx={{ display: "flex", }} >
           {navItems.map((item, index) => (
             <LinkApp key={index} href={item.path} >
               <ListItem key={index} disablePadding>
-                <ListItemButton key={index}  sx={{textAlign: 'center', fontWeight: "900", color: "#001265" }}>
+                <ListItemButton key={index} sx={{ textAlign: 'center', fontWeight: "900", color: "#001265" }}>
                   <ListItemText primary={item.title} />
                 </ListItemButton>
               </ListItem>
             </LinkApp>
-          ))}
-        <BtnAuth session={session!} />
+          ))} 
+          <ContainerCenter>
+          {!session?<Button sx={buttonConfig} href='/login' variant='contained' >Conectar-me</Button>:
+             <BtnAuth session={session} />}
+          </ContainerCenter>
         </List>
       </NavbarBox>
     </AppBar>

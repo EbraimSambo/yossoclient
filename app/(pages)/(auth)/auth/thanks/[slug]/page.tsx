@@ -1,5 +1,6 @@
 import Thanks from '@/components/auth/Thanks'
 import { fetcher } from '@/config/fetcher'
+import { Params } from '@/utils/interfaces/global'
 import { Metadata } from 'next'
 import { NextResponse } from 'next/server'
 import React from 'react'
@@ -8,11 +9,6 @@ export const metadata: Metadata ={
   title: "Obrigado",
   robots:{
     index: false
-  }
-}
-interface Params{
-  params:{
-      slug: string
   }
 }
 

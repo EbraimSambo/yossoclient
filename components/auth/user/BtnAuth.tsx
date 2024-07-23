@@ -1,17 +1,16 @@
 import { buttonConfig } from '@/components/_ui/Global'
 import { ContainerCenter } from '@/components/layout/bases/styled'
-import { Button } from '@mui/material'
+import { Avatar, Button, Skeleton } from '@mui/material'
 import React from 'react'
-import {signOut} from 'next-auth/react'
 import { Session } from 'next-auth'
 import AccountMenu from './MenuUser'
+import { useUser } from '@/hooks/queries'
 
-const BtnAuth = ({session}:{session:Session}) => {
+const BtnAuth = ({ session }: { session: Session }) => {
+    const { data: user, isLoading } = useUser(session.user.id)
+    if (isLoading) return <Skeleton variant="circular"><Avatar /></Skeleton>
     return (
-        <ContainerCenter>
-            {!session?<Button sx={buttonConfig} href='/login' variant='contained' >Conectar-me</Button>:
-             <AccountMenu />}
-        </ContainerCenter>
+        <AccountMenu user={user!} />
     )
 }
 

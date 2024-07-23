@@ -1,11 +1,11 @@
 export type User={
-    firsName: string
+    firstName: string
     lastName: string
     email: string
     id: string
     email: string
     profile: Profile
-    createAt: Date
+    createAt: string
     updatedAt: Date
 }
 
