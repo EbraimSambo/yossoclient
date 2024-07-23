@@ -9,7 +9,7 @@ const Profile = ({slug}:{slug:string}) => {
     const {data:user,isLoading} = useUser(slug)
     if(isLoading) return <div>Loading...</div>
   return (
-    <Box sx={{p: "1rem", boxShadow: 4, display: "grid",gridTemplateColumns: "repeat(2,1fr)"}}>
+    <Box sx={{p: "1rem", boxShadow: 4, display: "grid",gridTemplateColumns: "20% 80%"}}>
         <DescProfile user={user!} />
         <BasicTabs />
     </Box>
