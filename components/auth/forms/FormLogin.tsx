@@ -1,6 +1,6 @@
 "use client"
 import { ContainerCenter } from '@/components/layout/bases/styled'
-import { Box, Button, CircularProgress, InputBase } from '@mui/material'
+import { Button, CircularProgress, InputBase } from '@mui/material'
 import React from 'react'
 import { FormAuth, InputContent, InputControl, InputStyleConfig } from './styleForm'
 import { AlertErrorForm, ErrorForm, LabelForm } from '@/components/_ui/Form'

@@ -4,7 +4,7 @@ import { BackendURL } from "../constants/constants";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 async function refreshToken(token: JWT): Promise<JWT> {
-    const res = await fetch(BackendURL + "/auth/refresh", {
+    const res = await fetch(BackendURL + "auth/refresh", {
       method: "POST",
       headers: {
         authorization: `Refresh ${token.backendTokens.refreshToken}`,
@@ -35,10 +35,11 @@ async function refreshToken(token: JWT): Promise<JWT> {
         async authorize(credentials, req) {
           if (!credentials?.username || !credentials?.password) return null;
           const { username, password } = credentials;
-          const res = await fetch(BackendURL + "/auth/login", {
+          console.log(username, password )
+          const res = await fetch(BackendURL + "auth/login", {
             method: "POST",
             body: JSON.stringify({
-              username,
+              email: username,
               password,
             }),
             headers: {
@@ -72,5 +73,8 @@ async function refreshToken(token: JWT): Promise<JWT> {
   
         return session;
       },
+    },
+    pages: {
+      signIn: `/login`,
     },
   };

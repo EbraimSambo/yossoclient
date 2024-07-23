@@ -8,14 +8,14 @@ import TransitionPage from './bases/partials/TransitionPage'
 import { useAuthPath } from '@/hooks/main'
 import FooterSecondary from './bases/partials/FooterSecondary'
 
-const MainLayout: React.FC<MainProps> = ({ children }) => {
+const MainLayout: React.FC<MainProps> = ({ children,session }) => {
     const {veryPath} = useAuthPath()
     const refNavbar = useRef(null)
     return (
         <div ref={refNavbar}>
             <TransitionPage />
             <LayoutBox>
-                {!veryPath && <NavBar target={refNavbar} />}
+                {!veryPath && <NavBar session={session!} target={refNavbar} />}
                 <MainContent component={"main"} >
                     {children}
                 </MainContent>

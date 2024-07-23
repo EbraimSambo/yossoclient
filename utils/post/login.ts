@@ -3,7 +3,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { instanceGlobal } from "../contents/axios";
-
+import { signIn } from "next-auth/react";
+import { redirect } from "next/navigation";
+import { clientURL } from "@/config/constants/constants";
 
 export function useLogin(){
     const {handleSubmit,register,setError, reset,formState:{errors}} = useForm<inferLogin>({
@@ -17,32 +19,23 @@ export function useLogin(){
 
     const [loader,setLoader] = useState(false)
 
-    function sendData(data: inferLogin){
+    async function sendData(data: inferLogin){
         const {email,password} = data
         setMessageError({error: false,message: ""})
         setLoader(true)
-        instanceGlobal.post("auth/login",{
-            email,
-            password
+
+        const res = await signIn("credentials",{
+            username: email,
+            password,
+            redirect: false
         })
-        .then((res)=>{
-            reset()
-            console.log(res)
-        })
-        .catch((er)=>{
-            console.log(er.response);
-            console.log(er);
-            console.log(er.response?.status);
-            if(er.code === "ERR_NETWORK"){
-                setMessageError({error: true,message: "Ups! alguma coisa correu mal, com a sua conexão, tente mais tarde, ou atualize a pagina!"})
-            }
-            if(er.response.status === 401){
-                setMessageError({error: true,message: "O seu email ou palavra-passe estão incirrevtos!"})
-            }
-        })
-        .finally(()=>{
-            setLoader(false)
-        })
+
+        if(res?.ok) return window.location.assign(`${clientURL}/?welcome=welcome`)
+
+        if(res?.error){
+            console.log(res.error)
+            setMessageError({error: true,message: "O seu email ou palavra-passe estão incirrevtos!"})
+        }
     }
 
     return {handleSubmit,errorMessage,register,errors,sendData,loader}
@@ -55,3 +48,32 @@ export function useLogin(){
 // DATABASE_URL="mysql://root:@localhost:3306/yosso"
 // jwtSecretKey=HgYdLksz3WMSgWh0CF31z9daZuxK10SK7n94ER9ZtPGRTfCYQO/c/B+jHFVkTp0jmw5ffYktfF97iSF1IidW5w==
 // jwtRefreshTokenKey=b0Sc5QyQVdC3CQkQsuwGjb8ak9xlKG2qIQJvRBV9RJrO43KsDQ7sruXPW3XWpuMtM+vzG18DXtsPt6LLfJcPIw==
+
+// instanceGlobal.post("auth/login",{
+        //     email,
+        //     password,
+        //     redirect: false,
+        // })
+        // .then( async(res)=>{
+        //     reset()
+        //     const login = await signIn("credentials",{
+        //         email,
+        //         password,
+        //     })
+        //     console.log(res)
+
+        // })
+        // .catch((er)=>{
+        //     console.log(er.response);
+        //     console.log(er);
+        //     console.log(er.response?.status);
+        //     if(er.code === "ERR_NETWORK"){
+        //         setMessageError({error: true,message: "Ups! alguma coisa correu mal, com a sua conexão, tente mais tarde, ou atualize a pagina!"})
+        //     }
+        //     if(er.response.status === 401){
+        //         setMessageError({error: true,message: "O seu email ou palavra-passe estão incirrevtos!"})
+        //     }
+        // })
+        // .finally(()=>{
+        //     setLoader(false)
+        // })

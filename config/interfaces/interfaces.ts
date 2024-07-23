@@ -1,7 +1,9 @@
+import { Session } from "next-auth";
 import React from "react";
 
 export interface MainProps{
     children: React.ReactNode;
+    session?: Session | null
 }
 
 export interface Course{

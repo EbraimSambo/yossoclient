@@ -7,6 +7,8 @@ import AppLogo from '../../Global/Logo'
 import { useScrollHeader } from '../../../hooks/main'
 import LinkApp from '../../Global/Link'
 import { buttonConfig } from '@/components/_ui/Global'
+import { Session } from 'next-auth'
+import BtnAuth from '@/components/auth/user/BtnAuth'
 
 const logo: SxProps<Theme> = {
   display: { xs: "none", sm: "block" },
@@ -29,10 +31,11 @@ const navItems = [
 ];
 type ProgressbarProps = {
   target: React.RefObject<HTMLElement>;
+  session: Session | null
 };
 
 
-const NavBar = ({ target }: ProgressbarProps) => {
+const NavBar = ({ target,session }: ProgressbarProps) => {
   const { scroll, pathName } = useScrollHeader(target)
   return (
     <AppBar sx={pathName == "/" ? scroll ? { boxShadow: 4 } : { boxShadow: 0 }:{boxShadow: 4}} position='fixed'>
@@ -48,9 +51,7 @@ const NavBar = ({ target }: ProgressbarProps) => {
               </ListItem>
             </LinkApp>
           ))}
-        <ContainerCenter>
-          <Button sx={buttonConfig} href='/login' variant='contained' >Conectar-me</Button>
-        </ContainerCenter>
+        <BtnAuth session={session!} />
         </List>
       </NavbarBox>
     </AppBar>
