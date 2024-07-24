@@ -6,6 +6,7 @@ import DoneIcon from '@mui/icons-material/Done';
 import { ContainerCenterGap, ContainerColumn } from '../Global/styledGlobal';
 import TitleSection from '../Global/TitleSection';
 import Image from 'next/image';
+import { buttonConfig } from '../_ui/Global';
 const Item = styled("div")(({ theme }) => ({
     padding: 12,
     borderRadius: 2,
@@ -41,7 +42,7 @@ const Flats = () => {
                                 ))}
                             </Box>
                             <Box mt={3}>
-                                <Button variant='outlined' >Escolher Plano</Button>
+                                <Button sx={buttonConfig} variant='outlined' >Escolher Plano</Button>
                             </Box>
                         </Item>
                     </Grid>

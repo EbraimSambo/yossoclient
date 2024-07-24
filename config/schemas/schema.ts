@@ -18,6 +18,14 @@ export const schemaLogin = z.object({
     password: z.string().min(1,"Campo Obrigatorio"),
 })
 
+export const schemaCourse = z.object({
+    title: z.string().min(1,"Campo Obrigatorio"),
+    desc: z.string().min(1,"Campo Obrigatorio"),
+    duration: z.string().min(1,"Campo Obrigatorio"),
+    price: z.string().min(1,"Campo Obrigatorio"),
+    // cover: z.string()
+})
 export type inferMail = z.infer<typeof schemaMail>
 export type inferRegister = z.infer<typeof schemaRegister>
 export type inferLogin = z.infer<typeof schemaLogin>
+export type inferCourse = z.infer<typeof schemaCourse>

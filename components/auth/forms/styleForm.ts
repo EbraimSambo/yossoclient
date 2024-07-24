@@ -31,5 +31,6 @@ export const FormAuth = styled(Box)({
 export const InputStyleConfig: SxProps<Theme> | undefined ={
   fontSize: 13,
   height: "100%",
+  width: "100%",
   paddingLeft: 1
 }

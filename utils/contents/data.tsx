@@ -242,6 +242,6 @@ export const media = [
       title: "Email",
       icon: <AttachEmailIcon fontSize='small' />,
       url: "mailto:yossofinancas@gmail.com",
-      label: "mailto:yossofinancas@gmail.com"
+      label: "yossofinancas@gmail.com"
    } 
 ]

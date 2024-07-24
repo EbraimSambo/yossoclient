@@ -2,10 +2,7 @@ import * as React from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import { ContainerCenter } from '@/components/layout/bases/styled';
-import EditProfile from './EditProfile';
-import UploadCover from './UploadCover';
-
+import FormCourse from './FormCourse'
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -35,7 +32,7 @@ function a11yProps(index: number) {
   };
 }
 
-export default function BasicTabs() {
+export default function TabsWorkspace({id}:{id:string}) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -46,17 +43,15 @@ export default function BasicTabs() {
     <Box sx={{ width: '90%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-              <Tab label="Meus Cursos" {...a11yProps(0)} />
-          <Tab label="Editar Perfil" {...a11yProps(1)} />
+              <Tab label="Adicionar Curso" {...a11yProps(0)} />
+          <Tab label="Anunciar Curso" {...a11yProps(1)} />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        <ContainerCenter>
-          <span>Não Existem Cursos publicados</span>
-        </ContainerCenter>
+      <FormCourse id={id} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <EditProfile />
+      <span>Não Existem Cursos publicados</span>
       </CustomTabPanel>
     </Box>
   );

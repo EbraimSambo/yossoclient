@@ -5,6 +5,7 @@ import React from 'react'
 import { ContainerGrid, sxFlexGap } from '../Global/styledGlobal'
 import DoneIcon from '@mui/icons-material/Done';
 import CourseVideo from '../video/CourseVideo'
+import { buttonConfig } from '../_ui/Global'
 
 const ContentImage = styled("div")({
     position: "relative",
@@ -37,7 +38,7 @@ const InfoCourse = () => {
                     Inscreva-se em um dos nossos cursos tanto presencial, como de forma online
                 </Typography>
                 <Box sx={sxFlexGap}>
-                    <Button variant='contained'>Encontrar Cursos</Button>
+                    <Button sx={buttonConfig}  variant='contained'>Encontrar Cursos</Button>
                 </Box>
             </Grid>
 

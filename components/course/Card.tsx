@@ -7,6 +7,7 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import PaymentIcon from '@mui/icons-material/Payment';
 import ModeStandbyIcon from '@mui/icons-material/ModeStandby';
 import { ContainerBetween, ContainerCenterGap } from '../Global/styledGlobal'
+import { buttonConfig } from '../_ui/Global'
 const CardCourse = ({ course }: { course: Course }) => {
     return (
         <Item boxShadow={2} component={"li"}>
@@ -40,7 +41,7 @@ const CardCourse = ({ course }: { course: Course }) => {
                             Modalidade: Presencial
                         </Typography>
                     </ContainerCenterGap>
-                    <Button sx={{ fontSize: 12, fontWeight: 600 }} variant='text'>Ver Detalhes</Button>
+                    <Button sx={buttonConfig} variant='text'>Ver Detalhes</Button>
                 </ContainerBetween>
 
             </Body >

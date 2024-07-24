@@ -4,6 +4,7 @@ import Image from 'next/image'
 import React from 'react'
 import { ContainerGrid, sxFlexGap } from '../Global/styledGlobal'
 import DoneIcon from '@mui/icons-material/Done';
+import { buttonConfig } from '../_ui/Global'
 
 const ContentImage = styled("div")({
     position: "relative",
@@ -45,8 +46,8 @@ const Banner = () => {
                     </Typography>
                 </Box>
                 <Box sx={sxFlexGap}>
-                    <Button variant='contained'>Conhecer os planos</Button>
-                    <Button variant='outlined' >Compraar cursos</Button>
+                    <Button sx={buttonConfig} variant='contained'>Conhecer os planos</Button>
+                    <Button sx={buttonConfig} variant='outlined' >Compraar cursos</Button>
                 </Box>
             </Grid>
             <Grid xs={2} sm={4} md={4} >

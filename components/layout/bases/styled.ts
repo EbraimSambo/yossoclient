@@ -38,8 +38,25 @@ export const NavbarBox = styled(Box)(({ theme }) => ({
     color: theme.palette.primary.dark,
     gap: 2,
     padding: "0 2rem",
+
+}))
+export const ListNav = styled(Box)(({ theme }) => ({
+    display: "flex",
+    alignItems: "center",
+    padding: ".7rem 0",
+    [theme.breakpoints.down("md")]: {
+        display: "none",
+    }
 }))
 
+export const ListMobile = styled(Box)(({ theme }) => ({
+    display: "none",
+    alignItems: "center",
+    padding: "1rem 0",
+    [theme.breakpoints.down("md")]: {
+        display: "flex",
+    }
+}))
 export const ContainerBetween = styled(Box)(({ theme }) => ({
     display: "flex",
     // alignItems: "center",

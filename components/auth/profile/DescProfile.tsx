@@ -3,10 +3,12 @@ import AvatarProfile from './AvatarProfile'
 import { Box } from '@mui/material'
 import Content from './Content'
 import { User } from '@/config/auth/types'
+import { ContainerCenter } from '@/components/layout/bases/styled'
 
 const DescProfile = ({user}:{user:User}) => {
   return (
-    <Box >
+    <ContainerCenter sx={{alignItems: "flex-start"}} >
+      <Box>
         <AvatarProfile name={user.firstName} />
         <Content
          email={user.email}
@@ -14,7 +16,8 @@ const DescProfile = ({user}:{user:User}) => {
          phone={user.profile.phone} 
          createAt={user.createAt}
          />
-    </Box>
+      </Box>
+    </ContainerCenter>
   )
 }
 

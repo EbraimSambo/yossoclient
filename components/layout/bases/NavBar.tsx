@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContainerCenter, NavbarBox } from './styled'
+import { ContainerCenter, ListMobile, ListNav, NavbarBox } from './styled'
 import { AppBar, Button, List, ListItem, ListItemButton, ListItemText, SxProps, Typography } from '@mui/material'
 import { Theme } from '@emotion/react'
 import AppLogo from '../../Global/Logo'
@@ -40,7 +40,7 @@ const NavBar = ({ target, session }: ProgressbarProps) => {
     <AppBar sx={pathName == "/" ? scroll ? { boxShadow: 4 } : { boxShadow: 0 } : { boxShadow: 4 }} position='fixed'>
       <NavbarBox>
         <AppLogo color={"blue"} />
-        <List sx={{ display: "flex", }} >
+        <ListNav >
           {navItems.map((item, index) => (
             <LinkApp key={index} href={item.path} >
               <ListItem key={index} disablePadding>
@@ -54,7 +54,13 @@ const NavBar = ({ target, session }: ProgressbarProps) => {
           {!session?<Button sx={buttonConfig} href='/login' variant='contained' >Conectar-me</Button>:
              <BtnAuth session={session} />}
           </ContainerCenter>
-        </List>
+        </ListNav>
+        <ListMobile>
+           <ContainerCenter>
+          {!session?<Button sx={buttonConfig} href='/login' variant='contained' >Conectar-me</Button>:
+             <BtnAuth session={session} />}
+          </ContainerCenter>         
+        </ListMobile>
       </NavbarBox>
     </AppBar>
   )

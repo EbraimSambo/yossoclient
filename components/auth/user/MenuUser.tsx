@@ -69,7 +69,7 @@ export default function AccountMenu({ user }: Props) {
                 transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                 anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
             >
-                <Link href={`/profile/${user.id}`}>
+                <Link href={`/profile/${user?.id}`}>
                     <MenuItem onClick={handleClose}>
                         <Avatar sx={{ bgcolor: "#001265", }} /> <Typography component={"span"} >Perfil </Typography>
                     </MenuItem>
@@ -78,12 +78,14 @@ export default function AccountMenu({ user }: Props) {
                     <Avatar /> My account
                 </MenuItem>
                 <Divider />
+                <Link href={"/workspace"}>
                 <MenuItem onClick={handleClose}>
                     <ListItemIcon>
                         <PersonAdd fontSize="small" />
                     </ListItemIcon>
-                    Add another account
+                    Area De Trabalho
                 </MenuItem>
+                </Link>
                 <MenuItem onClick={handleClose}>
                     <ListItemIcon>
                         <Settings fontSize="small" />
